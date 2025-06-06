@@ -1,0 +1,46 @@
+# Maven target directory
+/target/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+*.iml
+.idea/
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# Systemy operacyjne
+.DS_Store
+Thumbs.db
+
+# Logi i pliki tymczasowe Java
+log/
+*.log
+hs_err_pid*
+
+# Pliki konfiguracyjne użytkownika
+*.swp
+*~
+
+# Spring Boot Devtools (restarty)
+spring-boot-devtools/
+
+# Flyway history
+/flyway/
+
+# .properties generowane przez IntelliJ (cache)
+application-*.properties
+
+# Pliki bazy danych embedded (jeśli używasz H2 w testach)
+/data/
+*.db
+
+# Klucze i pliki poufne (upewnij się, że nie wgrywasz haseł)
+/secret.properties
+/.env
