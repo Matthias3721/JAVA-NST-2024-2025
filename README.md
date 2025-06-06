@@ -34,42 +34,40 @@ Po kilku sekundach aplikacja będzie dostępna pod:
 http://localhost:8080
 Dokumentacja REST API (Swagger UI):
 
-bash
-Kopiuj
-Edytuj
 http://localhost:8080/swagger-ui/index.html
-Struktura katalogów projektu
-plaintext
-Kopiuj
-Edytuj
-├── Dockerfile
-├── docker-compose.yml
-├── pom.xml
-├── .gitignore
-├── README.md
-├── src
-│   ├── main
-│   │   ├── java/org/example/medmanagement
-│   │   │   ├── config         # SecurityConfig, OpenApiConfig
-│   │   │   ├── controller     # Kontrolery REST (Auth, Medications, Prescriptions, Reminders, Stock)
-│   │   │   ├── model          # Encje JPA: User, Role, Medication, Prescription, Reminder, Stock
-│   │   │   ├── repository     # Interfejsy JpaRepository dla każdej encji
-│   │   │   ├── security       # JwtAuthenticationFilter, JwtUtils, CustomUserDetailsService
-│   │   │   └── service        # Interfejsy i implementacje serwisów (MedicationServiceImpl, PrescriptionServiceImpl itp.)
-│   │   └── resources
-│   │       ├── application.properties  # Konfiguracja Spring Boot i DB
-│   │       └── db
-│   │           └── migration            # Pliki Flyway:
-│   │               ├── V1__create_roles_users.sql
-│   │               ├── V2__create_medications_prescriptions.sql
-│   │               └── V3__create_reminders_stock.sql
-│   └── test
-│       └── java/org/example/medmanagement  # Testy JUnit + konfiguracja JaCoCo
-└── docs
-    ├── erd
-    │   └── medmanagement-ERD.png      # Diagram ERD bazy danych
-    └── screenshots
-        └── jacoco-report.png          # Zrzut raportu JaCoCo
+/Mateusz-Wiecek
+│
+├─ Dockerfile
+├─ docker-compose.yml
+├─ pom.xml
+├─ .gitignore
+├─ README.md
+│
+├─ src
+│  ├─ main
+│  │  ├─ java/org/example/medmanagement
+│  │  │   ├─ config         ← SecurityConfig, OpenApiConfig
+│  │  │   ├─ controller     ← REST-kontrolery (Auth, Medications, Prescriptions, Reminders, Stock)
+│  │  │   ├─ model          ← encje JPA (User, Role, Medication, Prescription, Reminder, Stock)
+│  │  │   ├─ repository     ← interfejsy JpaRepository
+│  │  │   ├─ security       ← JwtAuthenticationFilter, JwtUtils, CustomUserDetailsService
+│  │  │   └─ service        ← interfejsy i implementacje serwisów (MedicationServiceImpl, PrescriptionServiceImpl itp.)
+│  │  │
+│  │  └─ resources
+│  │      ├─ application.properties  ← konfiguracja Spring Boot i PostgreSQL
+│  │      └─ db
+│  │          └─ migration            ← pliki Flyway: V1__…, V2__…, V3__…
+│  │
+│  └─ test
+│      └─ java/org/example/medmanagement  ← testy JUnit i JaCoCo
+│
+└─ docs
+   ├─ erd
+   │   └─ medmanagement-ERD.png      ← diagram bazy danych
+   │
+   └─ screenshots
+       └─ jacoco-report.png          ← zrzut raportu pokrycia kodu JaCoCo
+
 Diagram ERD bazy danych
 Schemat tabel i relacji w bazie danych (wygenerowany z dbdiagram.io):
 
